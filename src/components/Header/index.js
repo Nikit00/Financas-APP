@@ -1,6 +1,7 @@
 import React from "react";
 import { View, StyleSheet, Text, StatusBar, TouchableOpacity } from "react-native";
 import { Feather } from '@expo/vector-icons'
+import {MotiView, MotiText} from 'moti'
 
 const statusBarHeight = StatusBar.currentHeight ? StatusBar.currentHeight + 22: 64;
 
