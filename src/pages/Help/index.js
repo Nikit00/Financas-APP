@@ -5,48 +5,43 @@ import { useNavigation } from '@react-navigation/native';
 
 const statusBarHeight = StatusBar.currentHeight ? StatusBar.currentHeight + 22 : 38;
 
-export default function Welcome() {
+export default function Help(){
     const navigation = useNavigation();
     return (
         <View style={styles.container}>
-            <View style={styles.containerLogo}>
-                <Image source={require('../../assets/logo.png')}
-                    style={{ width: '100%' }}
-                    resizeMode="contain"
-                />
-                <Text style={styles.title}>Bem Vindo!</Text>
-                <Text style={styles.subtitle}>Gerencie suas receitas e despesas de forma simples e organizada.</Text>
-            </View>
-
-            <View style={styles.containerForm}>
-                <Text style={styles.titleForm}>Faça Login na sua conta existente</Text>
-                <View style={styles.boxInput}>
-                    <MaterialIcons name="email" size={30} color="#861BFB" />
-                    <TextInput placeholder="seuemail@exemplo.com" style={styles.input} />
-                </View>
-                <View style={styles.boxInput}>
-                    <MaterialIcons name="lock" size={30} color="#861BFB" />
-                    <TextInput placeholder="***********************" style={styles.input} />
-                </View>
-                <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
-                    <Text style={styles.textbutton}>Logar</Text>
-                </TouchableOpacity>
-                <View style={styles.baseboard}>
-                    <Text style={styles.text1}>Não tem uma conta?</Text>
-                    <TouchableOpacity style={styles.buttonNewAccount} onPress={() => navigation.navigate('Registrer')}>
-                        <Text style={styles.text2}>Cadastre-se Aqui.</Text>
-                    </TouchableOpacity>
-
-                </View>
-                <View style={styles.boxHelp}>
-                    <TouchableOpacity style={styles.buttonHelp} onPress={() => navigation.navigate('Help')}>
-                        <Text style={styles.textHelp}>Esqueceu a senha?</Text>
-                    </TouchableOpacity>
-                </View>
-            </View>
-
-
+        <View style={styles.containerLogo}>
+            <Image source={require('../../assets/logo.png')}
+                style={{ width: '100%' }}
+                resizeMode="contain"
+            />
+            <Text style={styles.title}>Bem Vindo!</Text>
+            <Text style={styles.subtitle}>Gerencie suas receitas e despesas de forma simples e organizada.</Text>
         </View>
+
+        <View style={styles.containerForm}>
+            <Text style={styles.titleForm}>Esqueceu a senha?</Text>
+            <Text style={styles.titleForm}>Caso você tenha esquecido a senha, insira o email cadastrado e clique no botão abaixo
+                 para receber um email com um link para redefinir sua senha.
+            </Text>
+            <View style={styles.boxInput}>
+                <MaterialIcons name="email" size={30} color="#861BFB" />
+                <TextInput placeholder="seuemail@exemplo.com" style={styles.input} />
+            </View>
+          
+            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Welcome')}>
+                <Text style={styles.textbutton}>Redefinir a senha</Text>
+            </TouchableOpacity>
+            <View style={styles.baseboard}>
+                <Text style={styles.text1}>Lembrou a senha?</Text>
+                <TouchableOpacity style={styles.buttonNewAccount} onPress={() => navigation.navigate('Welcome')}>
+                    <Text style={styles.text2}>Faça seu login.</Text>
+                </TouchableOpacity>
+
+            </View>
+        </View>
+
+
+    </View>
     )
 }
 
@@ -92,7 +87,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
     boxInput: {
-        marginTop: 14,
+        marginTop: 18,
         flexDirection: 'row',
         borderStyle: 'solid',
         borderColor: '#861BFB',
@@ -110,7 +105,7 @@ const styles = StyleSheet.create({
     button: {
         backgroundColor: '#861BFB',
         fontSize: 20,
-        marginTop: 14,
+        marginTop: 22,
         width: '80%',
         height: 55,
         borderRadius: 15,
@@ -124,11 +119,11 @@ const styles = StyleSheet.create({
         fontSize: 24,
         fontWeight: 'bold',
         color: '#FFF',
-        letterSpacing: 2,
+        
     },
     baseboard: {
         flexDirection: 'row',
-        marginTop: 18,
+        marginTop: 22,
         width: '100%',
         justifyContent: 'flex-end',
         alignItems: 'center'
@@ -143,16 +138,5 @@ const styles = StyleSheet.create({
     text1: {
         fontSize: 16,
         marginEnd: 8,
-    },
-    boxHelp: {
-        flexDirection: 'row',
-        marginTop: 30,
-        width: '100%',
-        justifyContent: 'flex-end',
-        alignItems: 'center'
-    },
-    textHelp: {
-        color: '#861BFB',
-        fontSize: 18,
     }
 })
