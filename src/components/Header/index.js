@@ -1,19 +1,24 @@
 import React from "react";
 import { View, StyleSheet, Text, StatusBar, TouchableOpacity } from "react-native";
-import { Feather } from '@expo/vector-icons'
-import {MotiView, MotiText} from 'moti'
+import { Feather } from '@expo/vector-icons';
+import * as Animatable from 'react-native-animatable';
 
 const statusBarHeight = StatusBar.currentHeight ? StatusBar.currentHeight + 22: 64;
 
 export default function Header({name}) {
     return(
         <View style={styles.container}>
-            <View style={styles.content}>
+            <Animatable.View style={styles.content}
+            animation="fadeIn"
+            duration={1500}
+            delay={300}
+
+            >
                 <Text style={styles.username}>{name}</Text>
                 <TouchableOpacity style={styles.buttonUser}>
                     <Feather name="user" size={26} color="#FFF"/>
                 </TouchableOpacity>
-            </View>
+            </Animatable.View>
         </View>
     )
 }

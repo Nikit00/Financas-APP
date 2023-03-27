@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, Image, StatusBar, TouchableOpacity, TextInput }
 import { MaterialIcons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons'; 
 import { useNavigation } from '@react-navigation/native';
+import * as Animatable from 'react-native-animatable';
 
 const statusBarHeight = StatusBar.currentHeight ? StatusBar.currentHeight + 22 : 38;
 
@@ -10,16 +11,24 @@ export default function Registrer() {
     const navigation = useNavigation();
     return (
         <View style={styles.container}>
-            <View style={styles.containerLogo}>
+            <Animatable.View style={styles.containerLogo}
+            animation="tada"
+            duration={1500}
+
+            >
                 <Image source={require('../../assets/logo.png')}
                     style={{ width: '100%' }}
                     resizeMode="contain"
                 />
                 <Text style={styles.title}>Bem Vindo!</Text>
                 <Text style={styles.subtitle}>Gerencie suas receitas e despesas de forma simples e organizada.</Text>
-            </View>
+            </Animatable.View>
 
-            <View style={styles.containerForm}>
+            <Animatable.View style={styles.containerForm}
+            animation="wobble"
+            duration={1500}
+                    
+            >
                 <Text style={styles.titleForm}>Insira seus dados para cadastro</Text>
                 <View style={styles.boxInput}>
                     <FontAwesome name="user" size={30} color="#861BFB" style={styles.icon} />
@@ -47,7 +56,7 @@ export default function Registrer() {
                     </TouchableOpacity>
 
                 </View>
-            </View>
+            </Animatable.View>
 
 
         </View>

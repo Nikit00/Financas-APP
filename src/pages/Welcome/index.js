@@ -1,7 +1,8 @@
 import React from "react";
-import { View, Text, StyleSheet, Image, StatusBar, TouchableOpacity, TextInput } from 'react-native';
+import { View, Text, StyleSheet, Image, StatusBar, TouchableOpacity, TextInput} from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
+import * as Animatable from 'react-native-animatable';
 
 const statusBarHeight = StatusBar.currentHeight ? StatusBar.currentHeight + 22 : 38;
 
@@ -9,16 +10,26 @@ export default function Welcome() {
     const navigation = useNavigation();
     return (
         <View style={styles.container}>
-            <View style={styles.containerLogo}>
+            <Animatable.View style={styles.containerLogo}
+            animation="bounceIn"
+            duration={1500}
+            useNativeDriver
+            >
                 <Image source={require('../../assets/logo.png')}
                     style={{ width: '100%' }}
                     resizeMode="contain"
                 />
                 <Text style={styles.title}>Bem Vindo!</Text>
                 <Text style={styles.subtitle}>Gerencie suas receitas e despesas de forma simples e organizada.</Text>
-            </View>
+            </Animatable.View>
 
-            <View style={styles.containerForm}>
+            <Animatable.View style={styles.containerForm}
+            animation="bounceInUp"
+            duration={1500}
+            delay={200}
+            useNativeDriver
+            
+            >
                 <Text style={styles.titleForm}>Faça Login na sua conta existente</Text>
                 <View style={styles.boxInput}>
                     <MaterialIcons name="email" size={30} color="#861BFB" />
@@ -43,7 +54,7 @@ export default function Welcome() {
                         <Text style={styles.textHelp}>Esqueceu a senha?</Text>
                     </TouchableOpacity>
                 </View>
-            </View>
+            </Animatable.View>
 
 
         </View>

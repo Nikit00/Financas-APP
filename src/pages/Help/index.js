@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text, StyleSheet, Image, StatusBar, TouchableOpacity, TextInput } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
+import * as Animatable from 'react-native-animatable';
 
 const statusBarHeight = StatusBar.currentHeight ? StatusBar.currentHeight + 22 : 38;
 
@@ -9,16 +10,22 @@ export default function Help(){
     const navigation = useNavigation();
     return (
         <View style={styles.container}>
-        <View style={styles.containerLogo}>
-            <Image source={require('../../assets/logo.png')}
-                style={{ width: '100%' }}
-                resizeMode="contain"
-            />
-            <Text style={styles.title}>Bem Vindo!</Text>
-            <Text style={styles.subtitle}>Gerencie suas receitas e despesas de forma simples e organizada.</Text>
-        </View>
+            <Animatable.View style={styles.containerLogo}
+            animation="bounceIn"
+            duration={1500}
+            >
+                <Image source={require('../../assets/logo.png')}
+                    style={{ width: '100%' }}
+                    resizeMode="contain"
+                />
+                <Text style={styles.title}>Bem Vindo!</Text>
+                <Text style={styles.subtitle}>Gerencie suas receitas e despesas de forma simples e organizada.</Text>
+            </Animatable.View>
 
-        <View style={styles.containerForm}>
+        <Animatable.View style={styles.containerForm}
+        animation="flash"
+        duration={1000}
+        >
             <Text style={styles.titleForm}>Esqueceu a senha?</Text>
             <Text style={styles.titleForm}>Caso você tenha esquecido a senha, insira o email cadastrado e clique no botão abaixo
                  para receber um email com um link para redefinir sua senha.
@@ -38,7 +45,7 @@ export default function Help(){
                 </TouchableOpacity>
 
             </View>
-        </View>
+        </Animatable.View>
 
 
     </View>

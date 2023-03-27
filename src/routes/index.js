@@ -3,6 +3,8 @@ import Welcome from '../pages/Welcome';
 import Registrer from '../pages/Registrer';
 import Home from '../pages/Home';
 import Help from '../pages/Help';
+import Add from '../pages/Add';
+import Remove from '../pages/Remove';
 
 const Stack = createNativeStackNavigator();
 
@@ -29,6 +31,17 @@ export default function Routes(){
                 component={Home}
                 options={{headerShown: false}}
             />
+             <Stack.Screen
+                name='Add'
+                component={Add}
+                options={{headerShown: false}}
+            />
+             <Stack.Screen
+                name='Remove'
+                component={Remove}
+                options={{headerShown: false}}
+            />
+            
             
         </Stack.Navigator>
     )

@@ -34,7 +34,7 @@ export default function Home() {
     <View style={styles.container}>
     <Header name="Henrique Rosa" />
     <Balance saldo="11.590,00" gastos="-2.395,50"/>
-    <Actions/>
+    <Actions colorAdd="#2ecc71" colorRemove="#e74c3c"/>
     <Text style={styles.title}>Últimos Registros</Text>
     <FlatList
       style={styles.list}

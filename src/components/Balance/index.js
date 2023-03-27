@@ -1,9 +1,13 @@
 import React from "react";
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet } from 'react-native';
+import * as Animatable from 'react-native-animatable';
 
 export default function Balance({saldo, gastos}){
     return (
-        <View style={styles.container}>
+        <Animatable.View style={styles.container}
+        animation="rotate"
+        duration={1000}
+        >
             <View style={styles.item}>
                 <Text style={styles.itemTitle}>Saldo</Text>
                 <View style={styles.content}>
@@ -19,7 +23,7 @@ export default function Balance({saldo, gastos}){
                     <Text style={styles.expenses}>{gastos}</Text>
                 </View>
             </View>
-        </View>
+        </Animatable.View>
 
     );
 }
