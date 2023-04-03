@@ -6,6 +6,7 @@ import Movements from '../../components/Movements';
 import Actions from '../../components/Actions';
 import Data from '../../components/Data';
 
+
 const list = [
     {
         id: 1,
@@ -54,6 +55,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#fafafa',
+        
     },
     title: {
         fontSize: 18,
