@@ -62,9 +62,9 @@ const styles = StyleSheet.create({
         margin: 14,
     },
     list: {
+        flex: 2,
         marginStart: 14,
         marginEnd: 14,
-
     }
 
 });

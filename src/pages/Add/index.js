@@ -35,9 +35,10 @@ export default function Add() {
         <View style={styles.container}>
             <Header name="Henrique Rosa" />
             <Balance saldo="11.590,00" gastos="-2.395,50" />
-            <Actions colorAdd="#2ecc71" colorRemove="#FFF"/>
-            <Data tipo="Entrada"/>
+            <Actions colorAdd="#2ecc71" colorRemove="#FFF" />
+            <Data tipo="Entrada" />
             <Text style={styles.title}>Últimos Registros</Text>
+
             <FlatList
                 style={styles.list}
                 data={list}
@@ -45,8 +46,6 @@ export default function Add() {
                 showsHorizontalScrollIndicator={false}
                 renderItem={({ item }) => <Movements data={item} />}
             />
-
-
         </View>
     );
 }
@@ -62,6 +61,7 @@ const styles = StyleSheet.create({
         margin: 14,
     },
     list: {
+        flex: 2,
         marginStart: 14,
         marginEnd: 14,
 
